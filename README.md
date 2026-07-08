@@ -1,169 +1,204 @@
 # 📊 SaaS Growth Leak Finder
 
-> An end-to-end Data Analytics project that identifies revenue leaks across the SaaS customer journey using PostgreSQL, Excel, and Power BI.
+> **An end-to-end Data Analytics project focused on identifying revenue leakage across the SaaS customer lifecycle using PostgreSQL, Excel, and Power BI.**
+
+![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?style=for-the-badge)
+![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi)
+![Excel](https://img.shields.io/badge/Excel-Analysis-217346?style=for-the-badge&logo=microsoft-excel)
+![Status](https://img.shields.io/badge/Project-In%20Progress-success?style=for-the-badge)
 
 ---
 
-## 📌 Project Overview
+# 📖 Overview
 
-SaaS companies often lose revenue because users drop off at different stages of the customer lifecycle.
+Software-as-a-Service (SaaS) businesses rely on recurring revenue for sustainable growth. However, many organizations lose potential revenue due to customer drop-offs throughout the user journey.
 
-This project analyzes the complete customer journey—from signup to paid subscription—to identify:
+This project analyzes the complete SaaS customer lifecycle—from user signup to paid subscription—to uncover revenue leaks, customer churn, acquisition performance, and product engagement.
 
-- User drop-off points
-- Churn behavior
-- Revenue performance
-- Customer acquisition effectiveness
-- Product engagement
-
-The goal is to provide actionable business insights that improve retention and maximize recurring revenue.
+The objective is to transform raw operational data into actionable business insights that support better strategic decision-making.
 
 ---
 
-## 🎯 Business Problem
+# 🎯 Business Problem
 
-Revenue leakage occurs when users:
+A SaaS company observed that despite acquiring thousands of new users every month, its Monthly Recurring Revenue (MRR) was growing slower than expected.
 
-- Sign up but never activate
-- Activate but don't start a trial
-- Start a trial but never subscribe
-- Subscribe but churn early
+The management wanted to understand:
 
-This project helps answer:
+- Why users were dropping off before becoming paying customers.
+- Which marketing channels attracted the highest-value customers.
+- Which subscription plans generated the most revenue.
+- What factors contributed to customer churn.
+- How product engagement influenced subscription retention.
 
-- Where is the biggest revenue leak?
-- Which acquisition channel performs best?
-- Which plans generate the highest revenue?
-- What factors contribute to churn?
+This project answers those business questions through structured SQL analysis and business intelligence techniques.
 
 ---
 
-## 🛠 Tech Stack
+# 🎯 Project Objectives
 
-- PostgreSQL
-- Excel
-- Power BI
+✔ Identify the biggest revenue leak in the customer journey
+
+✔ Measure customer activation and trial conversion rates
+
+✔ Analyze subscription performance
+
+✔ Evaluate acquisition channel effectiveness
+
+✔ Understand churn behavior
+
+✔ Measure customer engagement using product usage
+
+✔ Generate actionable insights for business growth
 
 ---
 
-## 📂 Dataset
+# 🛠 Tech Stack
 
-The project uses a realistic SaaS dataset containing **50,000 users** across four related tables.
+| Tool | Purpose |
+|-------|----------|
+| PostgreSQL | Data Storage & SQL Analysis |
+| Excel | Data Validation & Pivot Analysis |
+| Power BI | Interactive Dashboard & Visualization |
 
-### Tables
+---
+
+# 📂 Dataset
+
+A realistic SaaS dataset containing **50,000 customer records** distributed across four relational tables.
 
 | Table | Description |
-|--------|-------------|
-| Users | Customer information |
-| Product Usage | Login activity and feature usage |
-| Subscriptions | Trial, active, and churned subscriptions |
-| Support Tickets | Customer support interactions |
+|---------|-------------|
+| **Users** | Customer profile and acquisition information |
+| **Product Usage** | Login activity and feature usage metrics |
+| **Subscriptions** | Trial, Active, Cancelled and Churned subscriptions |
+| **Support Tickets** | Customer support interactions |
 
 ---
 
-## 🧹 Data Cleaning
+# 🗂 Database Schema
 
-Performed using PostgreSQL.
+```
+Users
+   │
+   ├────────────┐
+   │            │
+Product Usage   Subscriptions
+   │
+   │
+Support Tickets
+```
 
-Tasks completed:
-
-- Checked missing values
-- Checked duplicate records
-- Validated imported data
-- Verified table relationships
-- Ensured data consistency
-
----
-
-## 📊 Exploratory Data Analysis
-
-Explored:
-
-- User distribution by country
-- Device distribution
-- Acquisition sources
-- Subscription status
-- Plan distribution
+All tables are connected using the **User ID** as the primary relationship.
 
 ---
 
-## 📈 Business Analysis
+# 🧹 Data Cleaning
 
-The following business questions were answered using SQL:
+Data quality checks were performed using PostgreSQL.
 
-- Monthly Signups
-- Activation Rate
-- Trial → Paid Conversion Rate
-- Churn Rate
-- Revenue by Plan
-- Best Acquisition Source
-- Country with Highest Churn Rate
-- Highest ARPU by Plan
-- Average Days from Signup to Trial
-- Top 10 Countries by MRR
-- Average Login Count by Plan
+### Cleaning Process
+
+- Verified imported CSV files
+- Checked NULL values
+- Removed duplicate records
+- Validated foreign key relationships
+- Verified date formats
+- Checked subscription consistency
+- Ensured data integrity across tables
 
 ---
 
-## 📉 Excel Validation
+# 🔍 Exploratory Data Analysis
 
-Excel was used for quick validation using Pivot Tables.
+The initial analysis focused on understanding customer distribution and business performance.
 
-Created:
+### User Analysis
 
 - Users by Country
-- Revenue by Plan
+- Users by Device
+- Users by Acquisition Source
+- Signup Trend
 - Subscription Status Distribution
-- Support Tickets by Priority
+
+### Product Usage Analysis
+
+- Login Distribution
+- Feature Usage
+- Active vs Inactive Users
+
+### Subscription Analysis
+
+- Plan Distribution
+- Monthly Revenue
+- Active Users
+- Churned Users
 
 ---
 
-## 📊 Power BI Dashboard
+# 📈 Business Analysis
 
-The dashboard includes four pages.
+Business questions answered through SQL:
 
-### Executive Summary
+### Customer Growth
 
-- Total Users
-- Activation Rate
+- Monthly Signups
+- User Activation Rate
 - Trial Conversion Rate
-- Churn Rate
-- Monthly Recurring Revenue
-
-### Funnel Analysis
-
-- Signup
-- Activated
-- Trial
-- Paid Users
+- Paid Subscription Rate
 
 ### Revenue Analysis
 
+- Monthly Recurring Revenue (MRR)
 - Revenue by Plan
 - Revenue by Country
 - Revenue by Acquisition Source
-- Top Countries by MRR
+- Average Revenue Per User (ARPU)
 
-### Churn Analysis
+### Customer Retention
 
+- Churn Rate
 - Churn by Country
-- Churn by Plan
+- Churn by Subscription Plan
+- Average Days from Signup to Trial
+
+### Product Engagement
+
 - Average Login Count
-- ARPU Analysis
+- Feature Usage
+- Login Count by Subscription Plan
 
 ---
 
-## 💡 Key Insights
+# 📊 Excel Validation
 
-- Identified the largest customer drop-off in the SaaS funnel.
-- Compared revenue performance across subscription plans.
-- Evaluated acquisition channels based on generated revenue.
-- Analyzed customer engagement and churn behavior.
-- Measured activation and paid conversion rates.
+Before building the dashboard, SQL results were validated using Excel Pivot Tables.
+
+Validation included:
+
+- Revenue by Plan
+- Users by Country
+- Subscription Status
+- Support Tickets by Priority
+- Acquisition Source Distribution
 
 ---
 
-## 📁 Project Structure
+# 💡 Key Business Insights
+
+The analysis helps stakeholders identify:
+
+- Largest customer drop-off stage
+- Highest-performing acquisition channels
+- Most profitable subscription plans
+- Customer churn patterns
+- Revenue leakage points
+- User engagement trends
+- Opportunities to improve customer retention
+
+---
+
+# 📁 Project Structure
 
 ```
 saas-growth-leak-finder
@@ -176,8 +211,9 @@ saas-growth-leak-finder
 │
 ├── sql
 │   ├── 01_create_tables.sql
-│   ├── 02_exploratory_analysis.sql
-│   └── 03_business_analysis.sql
+│   ├── 02_data_cleaning.sql
+│   ├── 03_exploratory_analysis.sql
+│   └── 04_business_analysis.sql
 │
 ├── excel
 │   └── excel_validation.xlsx
@@ -187,33 +223,90 @@ saas-growth-leak-finder
 │
 ├── images
 │
+├── LICENSE
+│
 └── README.md
 ```
 
 ---
 
-## 🚀 Skills Demonstrated
+# 🚀 Skills Demonstrated
 
-- SQL Joins
-- Aggregations
+### SQL
+
+- Joins
+- Common Table Expressions (CTEs)
+- Aggregate Functions
 - CASE Statements
+- Window Functions
 - Date Functions
+- Subqueries
 - Data Cleaning
-- Exploratory Data Analysis
-- Business Analytics
-- Dashboard Design
-- Data Visualization
+- Business Metrics
+
+### Data Analysis
+
+- Exploratory Data Analysis (EDA)
+- Customer Funnel Analysis
+- Revenue Analysis
+- Churn Analysis
+- Customer Segmentation
+- KPI Development
+
+### Business Intelligence
+
 - KPI Reporting
+- Dashboard Design
+- Business Storytelling
+- Data Visualization
+- Executive Reporting
 
 ---
 
-## 👩‍💻 Author
+# 📚 Learning Outcomes
 
-**Marmika Pimparkar**
+Through this project, I strengthened my ability to:
 
-Aspiring Data Analyst passionate about transforming data into actionable business insights.
+- Design relational databases
+- Write business-focused SQL queries
+- Clean and validate datasets
+- Analyze customer behavior
+- Measure SaaS performance metrics
+- Translate data into business recommendations
 
-- SQL
+---
+
+# 🔮 Future Enhancements
+
+- Interactive Power BI Dashboard
+- Advanced DAX Measures
+- Cohort Analysis
+- Customer Lifetime Value (CLV)
+- Retention Analysis
+- Predictive Churn Modeling
+- Automated ETL Pipeline
+
+---
+
+# 👩‍💻 Author
+
+## **Marmika Pimparkar**
+
+**Aspiring Data Analyst** passionate about solving business problems through data.
+
+### Skills
+
 - PostgreSQL
+- SQL
 - Excel
 - Power BI
+- Data Analytics
+- Business Intelligence
+
+---
+
+## ⭐ If you found this project useful
+
+If you like this project, consider giving it a **⭐ Star** on GitHub.
+
+It motivates me to continue building real-world Data Analytics projects.
