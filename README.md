@@ -5,7 +5,7 @@
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-blue?style=for-the-badge)
 ![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi)
 ![Excel](https://img.shields.io/badge/Excel-Analysis-217346?style=for-the-badge&logo=microsoft-excel)
-![Status](https://img.shields.io/badge/Project-In%20Progress-success?style=for-the-badge)
+
 
 ---
 
