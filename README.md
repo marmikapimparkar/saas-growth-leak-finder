@@ -276,17 +276,6 @@ Through this project, I strengthened my ability to:
 
 ---
 
-# 🔮 Future Enhancements
-
-- Interactive Power BI Dashboard
-- Advanced DAX Measures
-- Cohort Analysis
-- Customer Lifetime Value (CLV)
-- Retention Analysis
-- Predictive Churn Modeling
-- Automated ETL Pipeline
-
----
 
 # 👩‍💻 Author
 
